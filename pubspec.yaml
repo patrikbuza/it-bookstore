@@ -15,7 +15,6 @@ dependencies:
   dio: ^5.0.1
   retrofit: ^4.0.1
   json_annotation: ^4.6.0
-  webview_flutter: ^4.0.7
   url_launcher: ^6.1.10
 
 dev_dependencies:
