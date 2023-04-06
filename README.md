@@ -26,5 +26,7 @@ IT-BOOKSTORE je aplikácia pre hľadanie kníh o IT. Umožňuje vyhľadávať po
 
 ## Autor
 Patrik Buža - IT Programmer
+
 Logo bolo vytvorené pomocou stránky - [DesignEvo](https://www.designevo.com/)
+
 Ak máte akékoľvek otázky alebo nápady na vylepšenie, neváhajte ma kontaktovať.
