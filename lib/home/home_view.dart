@@ -50,6 +50,12 @@ class HomeView extends GetView<HomeController> {
                 decoration: InputDecoration(
                   fillColor: Colors.white,
                   filled: true,
+                  suffixIcon: IconButton(
+                    onPressed: () {
+                      controller.searchController.clear();
+                    },
+                    icon: Icon(Icons.clear),
+                  ),
                   focusedBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(25.0),
                     borderSide: BorderSide(

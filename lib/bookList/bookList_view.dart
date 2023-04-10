@@ -103,42 +103,45 @@ class BookListView extends GetView<HomeController> {
                     ),
                   ),
           ),
-          Container(
-            height: 40,
-            color: Color.fromRGBO(153, 194, 236, 1),
-            child: Padding(
-              padding: EdgeInsets.only(left: 15, right: 15),
-              child: Obx(() => Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      SizedBox(
-                        width: MediaQuery.of(context).size.width / 7,
-                        child: Visibility(
-                          visible: controller.currentPage.value == 1 ? false : true,
-                          child: IconButton(
-                            icon: Icon(Icons.arrow_back_ios),
-                            onPressed: () {
-                              controller.previousPage();
-                            },
+          Visibility(
+            visible: controller.searchedBooks?.books?.isEmpty == true ? false : true,
+            child: Container(
+              height: 40,
+              color: Color.fromRGBO(153, 194, 236, 1),
+              child: Padding(
+                padding: EdgeInsets.only(left: 15, right: 15),
+                child: Obx(() => Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        SizedBox(
+                          width: MediaQuery.of(context).size.width / 7,
+                          child: Visibility(
+                            visible: controller.currentPage.value == 1 ? false : true,
+                            child: IconButton(
+                              icon: Icon(Icons.arrow_back_ios),
+                              onPressed: () {
+                                controller.previousPage();
+                              },
+                            ),
                           ),
                         ),
-                      ),
-                      Text("Page " + controller.currentPage.toString() + " / " + controller.maxP.toString()),
-                      SizedBox(
-                        width: MediaQuery.of(context).size.width / 7,
-                        child: Visibility(
-                          visible: controller.currentPage.value == controller.maxP.value ? false : true,
-                          child: IconButton(
-                            icon: Icon(Icons.arrow_forward_ios),
-                            onPressed: () async {
-                              controller.nextPage();
-                            },
+                        Text("Page " + controller.currentPage.toString() + " / " + controller.maxP.toString()),
+                        SizedBox(
+                          width: MediaQuery.of(context).size.width / 7,
+                          child: Visibility(
+                            visible: controller.currentPage.value == controller.maxP.value ? false : true,
+                            child: IconButton(
+                              icon: Icon(Icons.arrow_forward_ios),
+                              onPressed: () async {
+                                controller.nextPage();
+                              },
+                            ),
                           ),
                         ),
-                      ),
-                    ],
-                  )),
+                      ],
+                    )),
+              ),
             ),
           )
         ]),
